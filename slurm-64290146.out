@@ -1,0 +1,52 @@
+Traceback (most recent call last):
+  File "bi-LSTM_twoclass.py", line 18, in <module>
+    from replace_word import *
+  File "/mnt/ufs18/home-181/liuhua2/Yaxin/question_classification_py/replace_word.py", line 6, in <module>
+    from pyhanlp import HanLP   # 调入自然语言处理工具包
+  File "/mnt/ufs18/home-181/liuhua2/sklearn/lib/python3.6/site-packages/pyhanlp/__init__.py", line 146, in <module>
+    _start_jvm_for_hanlp()
+  File "/mnt/ufs18/home-181/liuhua2/sklearn/lib/python3.6/site-packages/pyhanlp/__init__.py", line 133, in _start_jvm_for_hanlp
+    HANLP_JVM_XMX, convertStrings=True)
+  File "/mnt/ufs18/home-181/liuhua2/sklearn/lib/python3.6/site-packages/jpype/_core.py", line 219, in startJVM
+    _jpype.startup(jvmpath, tuple(args), ignoreUnrecognized, convertStrings)
+jpype._jclass.java.lang.UnsupportedClassVersionError: org/jpype/classloader/JPypeClassLoader : Unsupported major.minor version 51.0
+
+If you suspect this is an IPython 7.16.1 bug, please report it at:
+    https://github.com/ipython/ipython/issues
+or send an email to the mailing list at ipython-dev@python.org
+
+You can print a more detailed traceback right now with "%tb", or use "%debug"
+to interactively debug it.
+
+Extra-detailed tracebacks for bug-reporting purposes can be enabled via:
+    %config Application.verbose_crash=True
+
+JobId=64290146 JobName=Name_of_Job
+   UserId=liuhua2(1045908) GroupId=cse(2010) MCS_label=N/A
+   Priority=61046 Nice=0 Account=general QOS=liuhua2
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:28 TimeLimit=04:00:00 TimeMin=N/A
+   SubmitTime=2020-06-28T21:56:16 EligibleTime=2020-06-28T21:56:16
+   AccrueTime=2020-06-28T21:56:16
+   StartTime=2020-06-28T21:56:21 EndTime=2020-06-29T01:56:21 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2020-06-28T21:56:21
+   Partition=general-short AllocNode:Sid=dev-intel16-k80:30787
+   ReqNodeList=(null) ExcNodeList=lac-143
+   NodeList=nvl-001
+   BatchHost=nvl-001
+   NumNodes=1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=4,mem=32G,node=1,billing=4980,gres/gpu=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryCPU=8G MinTmpDiskNode=0
+   Features=[intel14|intel16|intel18] DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/mnt/ufs18/home-181/liuhua2/Yaxin/question_classification_py/train_lstm.sb
+   WorkDir=/mnt/ufs18/home-181/liuhua2/Yaxin/question_classification_py
+   Comment=stdout=/mnt/ufs18/home-181/liuhua2/Yaxin/question_classification_py/slurm-64290146.out 
+   StdErr=/mnt/ufs18/home-181/liuhua2/Yaxin/question_classification_py/slurm-64290146.out
+   StdIn=/dev/null
+   StdOut=/mnt/ufs18/home-181/liuhua2/Yaxin/question_classification_py/slurm-64290146.out
+   Power=
+   TresPerNode=gpu:v100:1
+
