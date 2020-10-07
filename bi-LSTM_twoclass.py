@@ -284,6 +284,8 @@ X_true_test = true_text[35381:]
 
 # Load data
 X_train, y_train, X_dev, y_dev, X_test, y_test, text_list= get_data(df_train, df_dev, df_test, params = params)
+import ipdb
+ipdb.set_trace()
 
 #Chinese tone
 X_pinyin_true_train, X_pinyin_true_dev, X_pinyin_true_test, X_pinyin_test = Convert_pinyin(X_true_train), Convert_pinyin(X_true_dev), Convert_pinyin(X_true_test), Convert_pinyin(X_test)
