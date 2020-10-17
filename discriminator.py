@@ -25,12 +25,12 @@ class Discriminator(nn.Module):
         return h
 
     def forward(self, input, hidden):
-        # input dim                                                # [ seq_len x batch_size ]
-        emb = self.embeddings(input)                               # [ seq_len x batch_size x embedding_dim]
-        #emb = emb.permute(1, 0, 2)                                 # seq_len x batch_size x embedding_dim
-        _, hidden = self.gru(emb, hidden)                          # 4 x batch_size x hidden_dim
-        hidden = hidden.permute(1, 0, 2).contiguous()              # batch_size x 4 x hidden_dim
-        out = self.gru2hidden(hidden.view(-1, 4*self.hidden_dim))  # batch_size x 4*hidden_dim
+        # input dim                                                # [ seq_len, batch_size ]
+        emb = self.embeddings(input)                               # [ seq_len, batch_size, embedding_dim]
+        #emb = emb.permute(1, 0, 2)                                 # seq_len , batch_size, embedding_dim
+        _, hidden = self.gru(emb, hidden)                          # 4 x batch_size , hidden_dim
+        hidden = hidden.permute(1, 0, 2).contiguous()              # batch_size , 4 * hidden_dim
+        out = self.gru2hidden(hidden.view(-1, 4*self.hidden_dim))  # batch_size , 4 * hidden_dim
         out = torch.tanh(out)
         out = self.dropout_linear(out)
         out = self.hidden2out(out)                                 # batch_size x 1
